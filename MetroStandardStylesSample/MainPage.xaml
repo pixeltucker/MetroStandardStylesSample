@@ -1,0 +1,246 @@
+﻿<common:LayoutAwarePage
+    x:Class="MetroStandardStylesSample.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:MetroStandardStylesSample"
+    xmlns:common="using:MetroStandardStylesSample.Common"
+    DataContext="{Binding DefaultViewModel, RelativeSource={RelativeSource Self}}"
+    xmlns:data="using:MetroStandardStylesSample.Data"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Page.Resources>
+
+        <!-- Collection of items displayed by this page -->
+        <CollectionViewSource
+            x:Name="itemsViewSource"
+            Source="{Binding Items}"
+            d:Source="{Binding AllGroups[0].Items, Source={d:DesignInstance Type=data:SampleDataSource, IsDesignTimeCreatable=True}}"/>
+    </Page.Resources>
+    
+    <Grid Background="{StaticResource ApplicationPageBackgroundThemeBrush}">
+        <ScrollViewer Style="{StaticResource HorizontalScrollViewerStyle}">
+            <StackPanel Orientation="Horizontal">
+                <StackPanel.ChildrenTransitions>
+                    <TransitionCollection>
+                        <EntranceThemeTransition FromHorizontalOffset="4000" />
+                    </TransitionCollection>
+                </StackPanel.ChildrenTransitions>
+                <ScrollViewer Style="{StaticResource VerticalScrollViewerStyle}" Width="600">
+                    <StackPanel Margin="40">
+                        <TextBlock Style="{StaticResource SubheaderTextStyle}" Margin="0,0,0,20">RichTextBlock styles</TextBlock>
+                        <TextBlock Style="{StaticResource TitleTextStyle}" Margin="25,0,0,10">BasicRichTextStyle</TextBlock>
+                        <Grid Margin="50,0,0,20">
+                            <RichTextBlock Style="{StaticResource BasicRichTextStyle}">
+                                <Paragraph>Bacon ipsum dolor sit amet jowl flank shank jerky ribeye short ribs. Rump bresaola tail jerky pork loin turducken frankfurter pancetta bacon. Andouille leberkas ham, jowl tail boudin pork loin kielbasa tongue. Pork loin pork belly venison prosciutto fatback ground round tri-tip pastrami.</Paragraph>
+                            </RichTextBlock>
+                        </Grid>
+                        <TextBlock Style="{StaticResource TitleTextStyle}" Margin="25,0,0,10">BaselineRichTextStyle</TextBlock>
+                        <Grid Margin="50,0,0,20">
+                            <RichTextBlock Style="{StaticResource BaselineRichTextStyle}">
+                                <Paragraph>Bacon ipsum dolor sit amet jowl flank shank jerky ribeye short ribs. Rump bresaola tail jerky pork loin turducken frankfurter pancetta bacon. Andouille leberkas ham, jowl tail boudin pork loin kielbasa tongue. Pork loin pork belly venison prosciutto fatback ground round tri-tip pastrami.</Paragraph>
+                            </RichTextBlock>
+                        </Grid>
+                        <TextBlock Style="{StaticResource TitleTextStyle}" Margin="25,0,0,10">ItemRichTextStyle</TextBlock>
+                        <Grid Margin="50,0,0,20">
+                            <RichTextBlock Style="{StaticResource ItemRichTextStyle}">
+                                <Paragraph>Bacon ipsum dolor sit amet jowl flank shank jerky ribeye short ribs. Rump bresaola tail jerky pork loin turducken frankfurter pancetta bacon. Andouille leberkas ham, jowl tail boudin pork loin kielbasa tongue. Pork loin pork belly venison prosciutto fatback ground round tri-tip pastrami.</Paragraph>
+                            </RichTextBlock>
+                        </Grid>
+                        <TextBlock Style="{StaticResource TitleTextStyle}" Margin="25,0,0,10">BodyRichTextStyle</TextBlock>
+                        <Grid Margin="50,0,0,20">
+                            <RichTextBlock Style="{StaticResource BodyRichTextStyle}">
+                                <Paragraph>Bacon ipsum dolor sit amet jowl flank shank jerky ribeye short ribs. Rump bresaola tail jerky pork loin turducken frankfurter pancetta bacon. Andouille leberkas ham, jowl tail boudin pork loin kielbasa tongue. Pork loin pork belly venison prosciutto fatback ground round tri-tip pastrami.</Paragraph>
+                            </RichTextBlock>
+                        </Grid>
+                    </StackPanel>
+                </ScrollViewer>
+                <ScrollViewer Style="{StaticResource VerticalScrollViewerStyle}" Width="600">
+                    <StackPanel Margin="40">
+                        <TextBlock Style="{StaticResource SubheaderTextStyle}" Margin="0,0,0,20">TextBlock styles</TextBlock>
+                        <TextBlock Style="{StaticResource TitleTextStyle}" Margin="25,0,0,10">BasicTextStyle</TextBlock>
+                        <Grid Margin="50,0,0,20">
+                            <TextBlock Style="{StaticResource BasicTextStyle}">
+                                Bacon ipsum dolor sit amet jowl flank shank jerky ribeye short ribs. Rump bresaola tail jerky pork loin turducken frankfurter pancetta bacon. Andouille leberkas ham, jowl tail boudin pork loin kielbasa tongue. Pork loin pork belly venison prosciutto fatback ground round tri-tip pastrami.
+                            </TextBlock>
+                        </Grid>
+                        <TextBlock Style="{StaticResource TitleTextStyle}" Margin="25,0,0,10">BaselineTextStyle</TextBlock>
+                        <Grid Margin="50,0,0,20">
+                            <TextBlock Style="{StaticResource BaselineTextStyle}">
+                                Bacon ipsum dolor sit amet jowl flank shank jerky ribeye short ribs. Rump bresaola tail jerky pork loin turducken frankfurter pancetta bacon. Andouille leberkas ham, jowl tail boudin pork loin kielbasa tongue. Pork loin pork belly venison prosciutto fatback ground round tri-tip pastrami.
+                            </TextBlock>
+                        </Grid>
+                        <TextBlock Style="{StaticResource TitleTextStyle}" Margin="25,0,0,10">HeaderTextStyle</TextBlock>
+                        <Grid Margin="50,0,0,20">
+                            <TextBlock Style="{StaticResource HeaderTextStyle}">
+                                Bacon ipsum dolor
+                            </TextBlock>
+                        </Grid>
+                        <TextBlock Style="{StaticResource TitleTextStyle}" Margin="25,0,0,10">SubheaderTextStyle</TextBlock>
+                        <Grid Margin="50,0,0,20">
+                            <TextBlock Style="{StaticResource SubheaderTextStyle}">
+                                Bacon ipsum dolor
+                            </TextBlock>
+                        </Grid>
+                        <TextBlock Style="{StaticResource TitleTextStyle}" Margin="25,0,0,10">TitleTextStyle</TextBlock>
+                        <Grid Margin="50,0,0,20">
+                            <TextBlock Style="{StaticResource TitleTextStyle}">
+                                Bacon ipsum dolor
+                            </TextBlock>
+                        </Grid>
+                        <TextBlock Style="{StaticResource TitleTextStyle}" Margin="25,0,0,10">SubtitleTextStyle</TextBlock>
+                        <Grid Margin="50,0,0,20">
+                            <TextBlock Style="{StaticResource SubtitleTextStyle}">
+                                Bacon ipsum dolor
+                            </TextBlock>
+                        </Grid>
+                        <TextBlock Style="{StaticResource TitleTextStyle}" Margin="25,0,0,10">ItemTextStyle</TextBlock>
+                        <Grid Margin="50,0,0,20">
+                            <TextBlock Style="{StaticResource ItemTextStyle}">
+                                Bacon ipsum dolor sit amet jowl flank shank jerky ribeye short ribs. Rump bresaola tail jerky pork loin turducken frankfurter pancetta bacon. Andouille leberkas ham, jowl tail boudin pork loin kielbasa tongue. Pork loin pork belly venison prosciutto fatback ground round tri-tip pastrami.
+                            </TextBlock>
+                        </Grid>
+                        <TextBlock Style="{StaticResource TitleTextStyle}" Margin="25,0,0,10">BodyTextStyle</TextBlock>
+                        <Grid Margin="50,0,0,20">
+                            <TextBlock Style="{StaticResource BodyTextStyle}">
+                                Bacon ipsum dolor sit amet jowl flank shank jerky ribeye short ribs. Rump bresaola tail jerky pork loin turducken frankfurter pancetta bacon. Andouille leberkas ham, jowl tail boudin pork loin kielbasa tongue. Pork loin pork belly venison prosciutto fatback ground round tri-tip pastrami.
+                            </TextBlock>
+                        </Grid>
+                        <TextBlock Style="{StaticResource TitleTextStyle}" Margin="25,0,0,10">CaptionTextStyle</TextBlock>
+                        <Grid Margin="50,0,0,20">
+                            <TextBlock Style="{StaticResource CaptionTextStyle}">
+                                Bacon ipsum dolor sit amet jowl flank shank jerky ribeye short ribs. Rump bresaola tail jerky pork loin turducken frankfurter pancetta bacon. Andouille leberkas ham, jowl tail boudin pork loin kielbasa tongue. Pork loin pork belly venison prosciutto fatback ground round tri-tip pastrami.
+                            </TextBlock>
+                        </Grid>
+                        <TextBlock Style="{StaticResource TitleTextStyle}" Margin="25,0,0,10">GroupHeaderTextStyle</TextBlock>
+                        <Grid Margin="50,0,0,20">
+                            <TextBlock Style="{StaticResource GroupHeaderTextStyle}">
+                                Bacon ipsum dolor sit amet jowl flank shank jerky ribeye short ribs. Rump bresaola tail jerky pork loin turducken frankfurter pancetta bacon. Andouille leberkas ham, jowl tail boudin pork loin kielbasa tongue. Pork loin pork belly venison prosciutto fatback ground round tri-tip pastrami.
+                            </TextBlock>
+                        </Grid>
+                    </StackPanel>
+                </ScrollViewer>
+                <ScrollViewer Style="{StaticResource VerticalScrollViewerStyle}" Width="400">
+                    <StackPanel Margin="40">
+                        <TextBlock Style="{StaticResource SubheaderTextStyle}" Margin="0,0,0,20">Button styles</TextBlock>
+                        <TextBlock Style="{StaticResource TitleTextStyle}" Margin="25,0,0,10">TextButtonStyle</TextBlock>
+                        <Grid Margin="50,0,0,20">
+                            <Button Style="{StaticResource TextButtonStyle}">
+                                Bacon ipsum dolor
+                            </Button>
+                        </Grid>
+                        <TextBlock Style="{StaticResource TitleTextStyle}" Margin="25,0,0,10">TextPrimaryButtonStyle</TextBlock>
+                        <Grid Margin="50,0,0,20">
+                            <Button Style="{StaticResource TextPrimaryButtonStyle}">
+                                Bacon ipsum dolor
+                            </Button>
+                        </Grid>
+                        <TextBlock Style="{StaticResource TitleTextStyle}" Margin="25,0,0,10">TextSecondaryButtonStyle</TextBlock>
+                        <Grid Margin="50,0,0,20">
+                            <Button Style="{StaticResource TextSecondaryButtonStyle}">
+                                Bacon ipsum dolor
+                            </Button>
+                        </Grid>
+                        <TextBlock Style="{StaticResource TitleTextStyle}" Margin="25,0,0,10">TextRadioButtonStyle</TextBlock>
+                        <Grid Margin="50,0,0,20">
+                            <RadioButton Style="{StaticResource TextRadioButtonStyle}">
+                                Bacon ipsum dolor
+                            </RadioButton>
+                        </Grid>
+                        <TextBlock Style="{StaticResource TitleTextStyle}" Margin="25,0,0,10">AppBarButtonStyle</TextBlock>
+                        <Grid Margin="50,0,0,20">
+                            <Button Style="{StaticResource AppBarButtonStyle}">
+                                B
+                            </Button>
+                        </Grid>
+                    </StackPanel>
+                </ScrollViewer>
+                <ScrollViewer Style="{StaticResource VerticalScrollViewerStyle}" Width="600">
+                    <StackPanel Margin="40">
+                        <TextBlock Style="{StaticResource SubheaderTextStyle}" Margin="0,0,0,20">Title area styles</TextBlock>
+                        <TextBlock Style="{StaticResource TitleTextStyle}" Margin="25,0,0,10">PageHeaderTextStyle</TextBlock>
+                        <Grid Margin="50,0,0,20" Height="100">
+                            <TextBlock Style="{StaticResource PageHeaderTextStyle}">
+                                Bacon ipsum dolor sit amet jowl flank shank jerky ribeye short ribs. Rump bresaola tail jerky pork loin turducken frankfurter pancetta bacon. Andouille leberkas ham, jowl tail boudin pork loin kielbasa tongue. Pork loin pork belly venison prosciutto fatback ground round tri-tip pastrami.
+                            </TextBlock>
+                        </Grid>
+                        <TextBlock Style="{StaticResource TitleTextStyle}" Margin="25,0,0,10">PageSubheaderTextStyle</TextBlock>
+                        <Grid Margin="50,0,0,20">
+                            <TextBlock Style="{StaticResource PageSubheaderTextStyle}">
+                                Bacon ipsum dolor sit amet jowl flank shank jerky ribeye short ribs. Rump bresaola tail jerky pork loin turducken frankfurter pancetta bacon. Andouille leberkas ham, jowl tail boudin pork loin kielbasa tongue. Pork loin pork belly venison prosciutto fatback ground round tri-tip pastrami.
+                            </TextBlock>
+                        </Grid>
+                        <TextBlock Style="{StaticResource TitleTextStyle}" Margin="25,0,0,10">SnappedPageHeaderTextStyle</TextBlock>
+                        <Grid Margin="50,0,0,20">
+                            <TextBlock Style="{StaticResource SnappedPageHeaderTextStyle}">
+                                Bacon ipsum dolor sit amet jowl flank shank jerky ribeye short ribs. Rump bresaola tail jerky pork loin turducken frankfurter pancetta bacon. Andouille leberkas ham, jowl tail boudin pork loin kielbasa tongue. Pork loin pork belly venison prosciutto fatback ground round tri-tip pastrami.
+                            </TextBlock>
+                        </Grid>
+                        <TextBlock Style="{StaticResource TitleTextStyle}" Margin="25,0,0,10">BackButtonStyle</TextBlock>
+                        <Grid Margin="50,0,0,20">
+                            <Button Style="{StaticResource BackButtonStyle}">
+                            </Button>
+                        </Grid>
+                        <TextBlock Style="{StaticResource TitleTextStyle}" Margin="25,0,0,10">PortraitBackButtonStyle</TextBlock>
+                        <Grid Margin="50,0,0,20">
+                            <Button Style="{StaticResource PortraitBackButtonStyle}">
+                            </Button>
+                        </Grid>
+                        <TextBlock Style="{StaticResource TitleTextStyle}" Margin="25,0,0,10">SnappedBackButtonStyle</TextBlock>
+                        <Grid Margin="50,0,0,20">
+                            <Button Style="{StaticResource SnappedBackButtonStyle}">
+                            </Button>
+                        </Grid>
+                    </StackPanel>
+                </ScrollViewer>
+                <ScrollViewer Style="{StaticResource VerticalScrollViewerStyle}" Width="1000">
+                    <StackPanel Margin="40">
+                        <TextBlock Style="{StaticResource SubheaderTextStyle}" Margin="0,0,0,20">Item templates</TextBlock>
+                        <TextBlock Style="{StaticResource TitleTextStyle}" Margin="25,0,0,10">Standard250x250ItemTemplate</TextBlock>
+                        <Grid Margin="50,0,0,20">
+                            <GridView ItemTemplate="{StaticResource Standard250x250ItemTemplate}" SelectionMode="None" ItemsSource="{Binding Source={StaticResource itemsViewSource}}">
+                                <GridView.ItemsPanel>
+                                    <ItemsPanelTemplate>
+                                        <WrapGrid Orientation="Horizontal" />
+                                    </ItemsPanelTemplate>
+                                </GridView.ItemsPanel>
+                            </GridView>
+                        </Grid>
+                        <TextBlock Style="{StaticResource TitleTextStyle}" Margin="25,0,0,10">Standard500x130ItemTemplate</TextBlock>
+                        <Grid Margin="50,0,0,20">
+                            <GridView ItemTemplate="{StaticResource Standard500x130ItemTemplate}" SelectionMode="None" ItemsSource="{Binding Source={StaticResource itemsViewSource}}">
+                            </GridView>
+                        </Grid>
+                        <TextBlock Style="{StaticResource TitleTextStyle}" Margin="25,0,0,10">Standard130ItemTemplate</TextBlock>
+                        <Grid Margin="50,0,0,20">
+                            <GridView ItemTemplate="{StaticResource Standard130ItemTemplate}" SelectionMode="None" ItemsSource="{Binding Source={StaticResource itemsViewSource}}">
+                            </GridView>
+                        </Grid>
+                        <TextBlock Style="{StaticResource TitleTextStyle}" Margin="25,0,0,10">Standard80ItemTemplate</TextBlock>
+                        <Grid Margin="50,0,0,20">
+                            <GridView ItemTemplate="{StaticResource Standard80ItemTemplate}" SelectionMode="None" ItemsSource="{Binding Source={StaticResource itemsViewSource}}">
+                            </GridView>
+                        </Grid>
+                        <TextBlock Style="{StaticResource TitleTextStyle}" Margin="25,0,0,10">StandardSmallIcon70ItemTemplate</TextBlock>
+                        <Grid Margin="50,0,0,20">
+                            <GridView ItemTemplate="{StaticResource StandardSmallIcon70ItemTemplate}" SelectionMode="None" ItemsSource="{Binding Source={StaticResource itemsViewSource}}">
+                            </GridView>
+                        </Grid>
+                        <TextBlock Style="{StaticResource TitleTextStyle}" Margin="25,0,0,10">StandardFileWithTooltip190x130ItemTemplate</TextBlock>
+                        <Grid Margin="50,0,0,20">
+                            <GridView ItemTemplate="{StaticResource StandardFileWithTooltip190x130ItemTemplate}" SelectionMode="None" ItemsSource="{Binding Source={StaticResource itemsViewSource}}">
+                                <GridView.ItemsPanel>
+                                    <ItemsPanelTemplate>
+                                        <WrapGrid Orientation="Horizontal" />
+                                    </ItemsPanelTemplate>
+                                </GridView.ItemsPanel>
+                            </GridView>
+                        </Grid>
+                    </StackPanel>
+                </ScrollViewer>
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</common:LayoutAwarePage>
+
